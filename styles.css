@@ -1,8 +1,8 @@
 body {
+  padding: 20px;
   color: rgb(0, 0, 0);
   background: #fff;
   font: 100% system-ui;
-  text-align: center;
 }
 a {
   color: #0033cc;
