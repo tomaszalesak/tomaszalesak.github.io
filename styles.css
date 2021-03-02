@@ -13,7 +13,15 @@ a {
 }
 
 table {
+  border-collapse: collapse;
+  border-spacing: 0;
   width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 5px;
 }
 
 @media (prefers-color-scheme: dark) {
