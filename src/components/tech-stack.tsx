@@ -1,5 +1,6 @@
-import { Badge, Flex, Link } from "@radix-ui/themes";
+import { Badge, Flex } from "@radix-ui/themes";
 import { technologies } from "@/data/content";
+import { ExternalLink } from "./external-link";
 import { Section } from "./section";
 
 export function TechStack() {
@@ -7,17 +8,16 @@ export function TechStack() {
     <Section title="Stack I have experience with">
       <Flex wrap="wrap" gap="2">
         {technologies.map((tech) => (
-          <Link
+          <ExternalLink
             key={tech.name}
             href={tech.url}
-            target="_blank"
-            rel="noopener noreferrer"
             underline="none"
+            className="min-h-11 flex items-center"
           >
             <Badge variant="soft" size="2" highContrast>
               {tech.name}
             </Badge>
-          </Link>
+          </ExternalLink>
         ))}
       </Flex>
     </Section>

@@ -1,5 +1,6 @@
-import { Badge, Card, Flex, Heading, Link, Text } from "@radix-ui/themes";
+import { Badge, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { education } from "@/data/content";
+import { ExternalLink } from "./external-link";
 import { Section } from "./section";
 
 export function Education() {
@@ -14,15 +15,13 @@ export function Education() {
                   {entry.program}
                 </Heading>
                 <Flex gap="2" align="center" mt="1">
-                  <Link
+                  <ExternalLink
                     href={entry.institutionUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     size="2"
                     weight="medium"
                   >
                     {entry.institution}
-                  </Link>
+                  </ExternalLink>
                   <Text size="2" color="gray">
                     · {entry.degree}
                   </Text>

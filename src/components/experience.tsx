@@ -1,5 +1,6 @@
-import { Badge, Box, Card, Flex, Heading, Link, Text } from "@radix-ui/themes";
+import { Badge, Box, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { workExperience } from "@/data/content";
+import { ExternalLink } from "./external-link";
 import { Section } from "./section";
 
 export function Experience() {
@@ -23,15 +24,9 @@ export function Experience() {
               <Flex gap="2" wrap="wrap" align="center">
                 {job.companies.map((company, i) => (
                   <span key={company.name}>
-                    <Link
-                      href={company.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      size="2"
-                      weight="medium"
-                    >
+                    <ExternalLink href={company.url} size="2" weight="medium">
                       {company.name}
-                    </Link>
+                    </ExternalLink>
                     {i < job.companies.length - 1 && (
                       <Text color="gray" size="2">
                         {" · "}

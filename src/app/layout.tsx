@@ -31,9 +31,10 @@ export const metadata: Metadata = {
       "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU specializing in .NET, React.js, TypeScript, and cloud technologies.",
     images: [
       {
-        url: `${siteUrl}/portrait.jpeg`,
+        url: `${siteUrl}/portrait.webp`,
         width: 400,
         height: 400,
+        type: "image/webp",
         alt: "Tomáš Zálešák",
       },
     ],
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     title: "Tomáš Zálešák – Senior Software Engineer",
     description:
       "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU.",
-    images: [`${siteUrl}/portrait.jpeg`],
+    images: [`${siteUrl}/portrait.webp`],
   },
   icons: {
     icon: [
@@ -71,6 +72,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link
+          rel="preload"
+          href="/portrait.webp"
+          as="image"
+          type="image/webp"
+        />
         <meta
           name="theme-color"
           content="#ffffff"
@@ -83,6 +90,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-2 focus:bg-white focus:text-black dark:focus:bg-black dark:focus:text-white"
+        >
+          Skip to main content
+        </a>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -96,7 +109,7 @@ export default function RootLayout({
             scaling="100%"
           >
             <Container size="2" px="4" py="6" asChild>
-              <main>{children}</main>
+              <main id="main-content">{children}</main>
             </Container>
           </Theme>
         </ThemeProvider>

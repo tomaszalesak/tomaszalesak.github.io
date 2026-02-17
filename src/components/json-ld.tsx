@@ -35,7 +35,7 @@ export function JsonLd() {
       "Azure",
       "AWS",
     ],
-    image: "https://www.tomaszalesak.eu/portrait.jpeg",
+    image: "https://www.tomaszalesak.eu/portrait.webp",
   };
 
   return (

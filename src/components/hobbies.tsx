@@ -1,4 +1,5 @@
-import { Link, Text } from "@radix-ui/themes";
+import { Text } from "@radix-ui/themes";
+import { ExternalLink } from "./external-link";
 import { Section } from "./section";
 
 export function Hobbies() {
@@ -6,13 +7,9 @@ export function Hobbies() {
     <Section title="Hobbies">
       <Text as="p" size="3">
         Apart from IT, I love sports, especially basketball which I play for{" "}
-        <Link
-          href="http://basket.ub.cz"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <ExternalLink href="http://basket.ub.cz">
           BK TJ Spartak Uherský Brod
-        </Link>
+        </ExternalLink>
         .
       </Text>
     </Section>

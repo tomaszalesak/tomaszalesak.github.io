@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <Flex align="center" gap="5">
       <Image
-        src="/portrait.jpeg"
+        src="/portrait.webp"
         alt="Tomáš Zálešák"
-        width={100}
-        height={100}
-        className="rounded-full"
+        width={200}
+        height={200}
+        className="rounded-full w-[100px] h-[100px]"
         priority
       />
       <div>

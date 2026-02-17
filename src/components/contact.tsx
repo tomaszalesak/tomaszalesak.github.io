@@ -1,5 +1,6 @@
 import { Link, Table } from "@radix-ui/themes";
 import { contactLinks } from "@/data/content";
+import { ExternalLink } from "./external-link";
 import { Section } from "./section";
 
 export function Contact() {
@@ -13,13 +14,13 @@ export function Contact() {
                 {link.label}
               </Table.RowHeaderCell>
               <Table.Cell>
-                <Link
-                  href={link.href}
-                  target={link.external ? "_blank" : undefined}
-                  rel={link.external ? "noopener noreferrer" : undefined}
-                >
-                  {link.text}
-                </Link>
+                {link.external ? (
+                  <ExternalLink href={link.href}>{link.text}</ExternalLink>
+                ) : (
+                  <Link href={link.href} underline="always">
+                    {link.text}
+                  </Link>
+                )}
               </Table.Cell>
             </Table.Row>
           ))}

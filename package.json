@@ -22,6 +22,7 @@
     "@types/node": "^25.2.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "critters": "^0.0.25",
     "schema-dts": "^1.1.5",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
@@ -33,5 +34,11 @@
   "trustedDependencies": [
     "sharp",
     "unrs-resolver"
+  ],
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
   ]
 }
