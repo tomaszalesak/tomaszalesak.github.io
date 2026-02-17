@@ -17,7 +17,7 @@ Single-page portfolio site built with Next.js 16, React 19, Radix UI Themes, and
 
 ### Key decisions
 
-- **Static export only** (`output: "export"` in next.config.ts) — no server-side features, no API routes. Images use `unoptimized: true`.
+- **Static export only** (`output: "export"` in next.config.ts) — no server-side features, no API routes. Images use `unoptimized: true`. Critical CSS is inlined via `experimental.optimizeCss` (critters).
 - **Content is data-driven** — all portfolio content lives in `src/data/content.ts` as typed arrays (`contactLinks`, `workExperience`, `technologies`, `education`). Components import from there. To update content, edit that file only.
 - **Theming uses three layers:** `next-themes` (sets `class="dark"/"light"` on `<html>`, system preference only), Radix UI `<Theme>` (reads the class to switch design tokens), and Tailwind v4 (supports `dark:` variants natively when class is set on `<html>`).
 - **CSS layering:** `globals.css` imports Radix styles into `layer(components)` so Tailwind utilities can override them.
@@ -51,6 +51,7 @@ public/
     CNAME, favicons, portrait images, cv.pdf, site.webmanifest
 ```
 
-## Deployment
+## CI/CD
 
-Push to `main` triggers `.github/workflows/deploy.yml`: Bun install (`--frozen-lockfile`) → build → deploy `out/` to GitHub Pages. Custom domain: `www.tomaszalesak.eu` (CNAME in `public/`).
+- **CI** (`.github/workflows/ci.yml`): Runs on PRs to `main` and pushes to non-main branches. Steps: lint → type check (`tsc --noEmit`) → build.
+- **CD** (`.github/workflows/deploy.yml`): Runs on push to `main`. Steps: install (`--frozen-lockfile`) → build → deploy `out/` to GitHub Pages. Custom domain: `www.tomaszalesak.eu` (CNAME in `public/`).
