@@ -1,3 +1,5 @@
+export const siteUrl = "https://www.tomaszalesak.eu";
+
 export interface ContactLink {
   label: string;
   href: string;

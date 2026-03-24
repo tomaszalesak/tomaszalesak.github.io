@@ -1,9 +1,8 @@
 import { Container, Theme } from "@radix-ui/themes";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { siteUrl } from "@/data/content";
 import "./globals.css";
-
-const siteUrl = "https://www.tomaszalesak.eu";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

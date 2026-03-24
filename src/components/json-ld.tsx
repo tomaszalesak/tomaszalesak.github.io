@@ -1,11 +1,12 @@
 import type { Person, WithContext } from "schema-dts";
+import { siteUrl } from "@/data/content";
 
 export function JsonLd() {
   const jsonLd: WithContext<Person> = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Tomáš Zálešák",
-    url: "https://www.tomaszalesak.eu",
+    url: siteUrl,
     email: "tomas@tomaszalesak.eu",
     jobTitle: "Senior Software Engineer",
     worksFor: {
@@ -40,7 +41,7 @@ export function JsonLd() {
       "Azure",
       "AWS",
     ],
-    image: "https://www.tomaszalesak.eu/portrait.webp",
+    image: `${siteUrl}/portrait.webp`,
   };
 
   return (
