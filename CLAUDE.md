@@ -18,11 +18,11 @@ Single-page portfolio site built with Next.js 16, React 19, Radix UI Themes, and
 ### Key decisions
 
 - **Static export only** (`output: "export"` in next.config.ts) — no server-side features, no API routes. Images use `unoptimized: true`. Critical CSS is inlined via `experimental.optimizeCss` (critters).
-- **Content is data-driven** — all portfolio content lives in `src/data/content.ts` as typed arrays (`contactLinks`, `workExperience`, `technologies`, `education`). Components import from there. To update content, edit that file only.
+- **Content is data-driven** — all portfolio content lives in `src/data/content.ts` as typed arrays (`contactLinks`, `workExperience`, `technologies`, `education`) and the shared `siteUrl` constant. Components import from there. To update content, edit that file only. The `siteUrl` is also used by `layout.tsx`, `sitemap.ts`, and `json-ld.tsx`.
 - **Theming uses three layers:** `next-themes` (sets `class="dark"/"light"` on `<html>`, system preference only), Radix UI `<Theme>` (reads the class to switch design tokens), and Tailwind v4 (supports `dark:` variants natively when class is set on `<html>`).
 - **CSS layering:** `globals.css` imports Radix styles into `layer(components)` so Tailwind utilities can override them.
 - **Tailwind v4** — CSS-first configuration via `@import "tailwindcss"` in `globals.css`, no `tailwind.config` file. PostCSS plugin in `postcss.config.mjs`.
-- **Biome** for linting and formatting (replaces ESLint/Prettier). Config in `biome.json`.
+- **Biome** for linting and formatting (replaces ESLint/Prettier). Config in `biome.json`. Import ordering is enforced — Biome's `organizeImports` sorts imports alphabetically by specifier (e.g., `@radix-ui/themes` before `react`). Run `bun run lint:fix` to auto-sort.
 - **Path alias:** `@/*` maps to `./src/*`.
 
 ### Project structure
