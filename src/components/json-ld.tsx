@@ -8,6 +8,11 @@ export function JsonLd() {
     url: "https://www.tomaszalesak.eu",
     email: "tomas@tomaszalesak.eu",
     jobTitle: "Senior Software Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Disruptive Lab",
+      url: "https://disruptivelab.dev/",
+    },
     sameAs: [
       "https://www.linkedin.com/in/zalesaktomas/",
       "https://github.com/tomaszalesak",
