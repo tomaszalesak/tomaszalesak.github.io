@@ -1,5 +1,5 @@
-import { useId } from "react";
 import { Box, Heading } from "@radix-ui/themes";
+import { useId } from "react";
 
 interface SectionProps {
   title: string;
