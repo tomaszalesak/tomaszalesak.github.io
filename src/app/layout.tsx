@@ -72,12 +72,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          href="/portrait.webp"
-          as="image"
-          type="image/webp"
-        />
         <meta
           name="theme-color"
           content="#ffffff"
