@@ -79,7 +79,7 @@ export const workExperience: WorkExperience[] = [
     period: "2019–2021",
   },
   {
-    title: "Software Engineer",
+    title: "Software Engineer Intern",
     description:
       "Localization automation, translating and database migration, Python 3, SQL, .NET, JavaScript.",
     companies: [{ name: "AutoCont", url: "https://www.autocont.cz/" }],
