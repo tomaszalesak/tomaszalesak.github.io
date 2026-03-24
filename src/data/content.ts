@@ -50,6 +50,12 @@ export const contactLinks: ContactLink[] = [
     text: "facebook.com/zalesak.tomas",
     external: true,
   },
+  {
+    label: "CV",
+    href: "/cv.pdf",
+    text: "Download CV (PDF)",
+    external: false,
+  },
 ];
 
 export const workExperience: WorkExperience[] = [
