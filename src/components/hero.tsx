@@ -7,8 +7,8 @@ export function Hero() {
       <Image
         src="/portrait.webp"
         alt="Tomáš Zálešák"
-        width={200}
-        height={200}
+        width={100}
+        height={100}
         className="rounded-full w-[100px] h-[100px]"
         priority
       />
