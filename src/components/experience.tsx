@@ -21,18 +21,24 @@ export function Experience() {
               {job.description}
             </Text>
             <Box mt="2">
-              <Flex gap="2" wrap="wrap" align="center">
+              <Flex
+                gap="1"
+                wrap="wrap"
+                align="center"
+                role="list"
+                aria-label="Companies"
+              >
                 {job.companies.map((company, i) => (
-                  <span key={company.name}>
+                  <li key={company.name} className="list-none">
                     <ExternalLink href={company.url} size="2" weight="medium">
                       {company.name}
                     </ExternalLink>
                     {i < job.companies.length - 1 && (
-                      <Text color="gray" size="2">
+                      <Text color="gray" size="2" aria-hidden="true">
                         {" · "}
                       </Text>
                     )}
-                  </span>
+                  </li>
                 ))}
               </Flex>
             </Box>
