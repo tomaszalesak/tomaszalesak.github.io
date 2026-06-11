@@ -6,15 +6,18 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Tomáš Zálešák – Senior Software Engineer",
+  title: "Tomáš Zálešák – Freelance Senior Software Engineer",
   description:
-    "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU specializing in .NET, React.js, TypeScript, and cloud technologies.",
+    "Tomáš Zálešák — freelance senior software engineer in the EU. Full-stack .NET, React, TypeScript, and cloud. Available for client projects.",
   keywords: [
     "senior software engineer",
+    "freelance software engineer",
+    "software consultant",
     "full-stack developer",
     ".NET",
     "React",
     "TypeScript",
+    "Next.js",
     "portfolio",
     "Tomáš Zálešák",
   ],
@@ -25,9 +28,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "Tomáš Zálešák",
-    title: "Tomáš Zálešák – Senior Software Engineer",
+    title: "Tomáš Zálešák – Freelance Senior Software Engineer",
     description:
-      "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU specializing in .NET, React.js, TypeScript, and cloud technologies.",
+      "Tomáš Zálešák — freelance senior software engineer in the EU. Full-stack .NET, React, TypeScript, and cloud. Available for client projects.",
     images: [
       {
         url: `${siteUrl}/portrait.webp`,
@@ -40,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Tomáš Zálešák – Senior Software Engineer",
+    title: "Tomáš Zálešák – Freelance Senior Software Engineer",
     description:
-      "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU.",
+      "Freelance senior software engineer based in the EU — available for client projects.",
     images: [`${siteUrl}/portrait.webp`],
   },
   icons: {

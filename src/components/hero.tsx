@@ -17,7 +17,7 @@ export function Hero() {
           Tomáš Zálešák
         </Heading>
         <Text as="p" size="3" color="gray" mt="1">
-          Senior software engineer based in the EU (CET).
+          Freelance senior software engineer based in the EU (CET).
         </Text>
       </div>
     </Flex>

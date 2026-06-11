@@ -1,3 +1,5 @@
+import { About } from "@/components/about";
+import { ClientProjects } from "@/components/client-projects";
 import { Contact } from "@/components/contact";
 import { Education } from "@/components/education";
 import { Experience } from "@/components/experience";
@@ -11,8 +13,10 @@ export default function Home() {
     <>
       <JsonLd />
       <Hero />
+      <About />
       <Contact />
       <Experience />
+      <ClientProjects />
       <TechStack />
       <Education />
       <Hobbies />

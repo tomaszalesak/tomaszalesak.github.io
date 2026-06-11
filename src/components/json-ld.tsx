@@ -1,14 +1,15 @@
-import type { Person, WithContext } from "schema-dts";
+import type { Person, ProfilePage, WithContext } from "schema-dts";
 import { siteUrl } from "@/data/content";
 
 export function JsonLd() {
-  const jsonLd: WithContext<Person> = {
-    "@context": "https://schema.org",
+  const person: Person = {
     "@type": "Person",
     name: "Tomáš Zálešák",
     url: siteUrl,
     email: "tomas@tomaszalesak.eu",
     jobTitle: "Senior Software Engineer",
+    description:
+      "Freelance senior software engineer in the EU. Full-stack .NET, React, TypeScript, and cloud. Available for client projects.",
     worksFor: {
       "@type": "Organization",
       name: "Disruptive Lab",
@@ -31,17 +32,36 @@ export function JsonLd() {
     ],
     knowsAbout: [
       ".NET",
+      "C#",
+      "Entity Framework Core",
       "React.js",
+      "Vue.js",
+      "Solid.js",
+      "Next.js",
       "TypeScript",
       "JavaScript",
       "Node.js",
+      "Tailwind CSS",
       "Python",
       "Docker",
+      "Kubernetes",
       "SQL",
+      "PostgreSQL",
+      "Microsoft SQL Server",
       "Azure",
       "AWS",
+      "Microservices",
+      "Domain-Driven Design",
+      "CI/CD",
+      "Application Security",
     ],
     image: `${siteUrl}/portrait.webp`,
+  };
+
+  const jsonLd: WithContext<ProfilePage> = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: person,
   };
 
   return (
