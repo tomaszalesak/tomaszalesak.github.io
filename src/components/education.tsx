@@ -17,12 +17,12 @@ export function Education() {
                 <Flex gap="2" align="center" mt="1">
                   <ExternalLink
                     href={entry.institutionUrl}
-                    size="2"
+                    size={{ initial: "3", sm: "2" }}
                     weight="medium"
                   >
                     {entry.institution}
                   </ExternalLink>
-                  <Text size="2" color="gray">
+                  <Text size={{ initial: "3", sm: "2" }} color="gray">
                     · {entry.degree}
                   </Text>
                 </Flex>

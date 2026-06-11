@@ -27,7 +27,7 @@ const techRows: { label: string; items: string; color: AccentColor }[] = [
 
 function Eyebrow({ children, mt }: Readonly<{ children: string; mt?: "6" }>) {
   return (
-    <Heading as="h3" size="2" mb="3" mt={mt}>
+    <Heading as="h3" size={{ initial: "3", sm: "2" }} mb="3" mt={mt}>
       {children}
     </Heading>
   );
@@ -36,27 +36,27 @@ function Eyebrow({ children, mt }: Readonly<{ children: string; mt?: "6" }>) {
 export function Expertise() {
   return (
     <Section title="What I do">
-      <Text as="p" size="3">
+      <Text as="p" size={{ initial: "4", sm: "3" }}>
         {expertiseIntro}
       </Text>
 
       <Eyebrow mt="6">How I work</Eyebrow>
-      <Grid columns={{ initial: "1", xs: "2" }} gap="3">
+      <Grid columns={{ initial: "1", xs: "2" }} gap="4">
         {workPrinciples.map((principle) => (
           <Box
             key={principle.title}
-            className="rounded-lg p-3"
+            className="rounded-lg p-4"
             style={{ backgroundColor: token(principle.color, 2) }}
           >
-            <Flex align="center" gap="2" mb="1">
+            <Flex align="center" gap="2" mb="2">
               <span style={{ color: token(principle.color, 11) }}>
                 <PrincipleGlyph icon={principle.icon} />
               </span>
-              <Heading as="h4" size="2">
+              <Heading as="h4" size={{ initial: "3", sm: "2" }}>
                 {principle.title}
               </Heading>
             </Flex>
-            <Text as="p" size="2" color="gray">
+            <Text as="p" size={{ initial: "3", sm: "2" }} color="gray">
               {principle.description}
             </Text>
           </Box>
@@ -64,13 +64,13 @@ export function Expertise() {
       </Grid>
 
       <Eyebrow mt="6">Tech stack and what I can build for you</Eyebrow>
-      <Flex direction="column" gap="2">
+      <Flex direction="column" gap="3">
         {techRows.map((row) => (
           <Flex key={row.label} gap="2" align="baseline" wrap="wrap">
-            <Badge color={row.color} variant="soft" radius="full">
+            <Badge color={row.color} variant="soft" size="2" radius="full">
               {row.label}
             </Badge>
-            <Text size="2" color="gray">
+            <Text size={{ initial: "3", sm: "2" }} color="gray">
               {row.items}
             </Text>
           </Flex>
