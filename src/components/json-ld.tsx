@@ -7,6 +7,7 @@ export function JsonLd() {
     name: "Tomáš Zálešák",
     url: siteUrl,
     email: "tomas@tomaszalesak.eu",
+    telephone: "+420773658177",
     jobTitle: "Senior Software Engineer",
     description:
       "Senior software engineer in the EU building enterprise-grade web applications, distributed systems, and data analysis solutions. Available for freelance projects.",

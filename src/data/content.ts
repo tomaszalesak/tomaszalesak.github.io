@@ -165,6 +165,16 @@ export const contactLinks: ContactLink[] = [
     external: false,
   },
   {
+    label: "Phone",
+    href: "tel:+420773658177",
+    external: false,
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/420773658177",
+    external: true,
+  },
+  {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/zalesaktomas/",
     external: true,
