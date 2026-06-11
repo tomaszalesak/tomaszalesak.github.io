@@ -21,6 +21,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build CV (LaTeX -> public/cv.pdf)
+        run: |
+          if ls cv/*.tex >/dev/null 2>&1; then
+            bash scripts/build-cv.sh
+          else
+            echo "No CV source in cv/; using committed public/cv.pdf."
+          fi
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 

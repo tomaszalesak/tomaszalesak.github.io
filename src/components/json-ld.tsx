@@ -59,7 +59,6 @@ export function JsonLd() {
       "Blazor",
       "Angular",
       "Azure Kubernetes Service (AKS)",
-      "Microsoft Power BI",
       "Distributed Systems",
       "Data Analysis",
     ],

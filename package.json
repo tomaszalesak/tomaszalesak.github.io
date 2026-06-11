@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "bunx serve out",
     "lint": "biome check",
-    "lint:fix": "biome check --fix"
+    "lint:fix": "biome check --fix",
+    "cv:build": "bash scripts/build-cv.sh"
   },
   "dependencies": {
     "@radix-ui/themes": "^3.3.0",

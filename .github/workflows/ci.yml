@@ -11,6 +11,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build CV (validate LaTeX compiles)
+        run: |
+          if ls cv/*.tex >/dev/null 2>&1; then
+            bash scripts/build-cv.sh
+          else
+            echo "No CV source in cv/; skipping."
+          fi
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 
