@@ -39,14 +39,11 @@ export type AccentColor =
   | "ruby"
   | "violet";
 
-export type ServiceIcon = "web" | "distributed" | "data";
 export type PrincipleIcon = "cicd" | "scale" | "shield" | "team";
 
 export interface ServiceOffering {
   name: string;
-  description: string;
   items: string[];
-  icon: ServiceIcon;
   color: AccentColor;
 }
 
@@ -64,17 +61,11 @@ export interface SkillGroup {
 }
 
 export const expertiseIntro =
-  "I'm a senior full-stack engineer specializing in enterprise-grade software — designed for scalability, security, and stability from day one. I build complete products end to end, from backend architecture and databases to polished frontends and the pipelines that ship them.";
-
-export const expertiseClosing =
-  "I've tried many languages and technologies over the years — my passion is choosing the right one for the problem at hand.";
+  "I'm a senior full-stack engineer specializing in enterprise-grade software — designed for scalability, security, and stability from day one. I build complete products end to end, from backend architecture and databases to polished frontends and the pipelines that ship them. I've tried many languages and technologies over the years, and my passion is choosing the right one for the problem at hand.";
 
 export const services: ServiceOffering[] = [
   {
     name: "Web applications",
-    description:
-      "Complete web applications on a proven enterprise stack — designed, built, and supported for the long run.",
-    icon: "web",
     color: "indigo",
     items: [
       ".NET backend — ASP.NET Core with MVC, Razor Pages, or Blazor",
@@ -84,9 +75,6 @@ export const services: ServiceOffering[] = [
   },
   {
     name: "Distributed systems",
-    description:
-      "For applications where resiliency, scalability, and throughput are essential — systems that keep running when traffic doubles.",
-    icon: "distributed",
     color: "teal",
     items: [
       "Microservices orchestrated with Kubernetes and Docker",
@@ -96,9 +84,6 @@ export const services: ServiceOffering[] = [
   },
   {
     name: "Data analysis",
-    description:
-      "From raw data to decisions — processing pipelines, automated reporting, and insights your team can act on.",
-    icon: "data",
     color: "amber",
     items: [
       "Data processing and normalization",

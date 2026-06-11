@@ -1,4 +1,4 @@
-import type { PrincipleIcon, ServiceIcon } from "@/data/content";
+import type { PrincipleIcon } from "@/data/content";
 
 interface IconProps {
   size?: number;
@@ -11,39 +11,6 @@ const base = {
   strokeWidth: 1.75,
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
-};
-
-export function CheckIcon({ size = 14 }: IconProps) {
-  return (
-    <svg
-      width={size}
-      height={size}
-      aria-hidden="true"
-      {...base}
-      strokeWidth={2.25}
-    >
-      <path d="M5 13l4 4L19 7" />
-    </svg>
-  );
-}
-
-const serviceIcons: Record<ServiceIcon, React.ReactNode> = {
-  web: (
-    <>
-      <rect x="3" y="4" width="18" height="16" rx="2" />
-      <path d="M3 9h18" />
-      <path d="M7 6.5h.01M10 6.5h.01" />
-    </>
-  ),
-  distributed: (
-    <>
-      <circle cx="12" cy="5" r="2" />
-      <circle cx="5" cy="19" r="2" />
-      <circle cx="19" cy="19" r="2" />
-      <path d="M12 7v3m0 0L6 17m6-7l6 7" />
-    </>
-  ),
-  data: <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />,
 };
 
 const principleIcons: Record<PrincipleIcon, React.ReactNode> = {
@@ -73,17 +40,6 @@ const principleIcons: Record<PrincipleIcon, React.ReactNode> = {
     </>
   ),
 };
-
-export function ServiceGlyph({
-  icon,
-  size = 22,
-}: IconProps & { icon: ServiceIcon }) {
-  return (
-    <svg width={size} height={size} aria-hidden="true" {...base}>
-      {serviceIcons[icon]}
-    </svg>
-  );
-}
 
 export function PrincipleGlyph({
   icon,
