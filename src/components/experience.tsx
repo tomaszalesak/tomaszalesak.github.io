@@ -22,71 +22,67 @@ export function Experience() {
             </Text>
             {job.companies && (
               <Box mt="2">
-                <Flex
-                  gap="1"
-                  wrap="wrap"
-                  align="center"
-                  role="list"
-                  aria-label="Companies"
-                >
-                  {job.companies.map((company, i) => (
-                    <li key={company.name} className="list-none">
-                      <ExternalLink href={company.url} size="2" weight="medium">
-                        {company.name}
-                      </ExternalLink>
-                      {i < (job.companies?.length ?? 0) - 1 && (
-                        <Text color="gray" size="2" aria-hidden="true">
-                          {" · "}
-                        </Text>
-                      )}
-                    </li>
-                  ))}
+                <Flex gap="1" wrap="wrap" align="center" asChild>
+                  <ul aria-label="Companies" className="list-none">
+                    {job.companies.map((company, i) => (
+                      <li key={company.name}>
+                        <ExternalLink
+                          href={company.url}
+                          size="2"
+                          weight="medium"
+                        >
+                          {company.name}
+                        </ExternalLink>
+                        {i < (job.companies?.length ?? 0) - 1 && (
+                          <Text color="gray" size="2" aria-hidden="true">
+                            {" · "}
+                          </Text>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </Flex>
               </Box>
             )}
             {job.projects && (
-              <Flex
-                direction="column"
-                gap="3"
-                mt="3"
-                role="list"
-                aria-label="Client projects"
-              >
-                {job.projects.map((project) => (
-                  <li
-                    key={project.name}
-                    className="list-none border-l-2 border-(--gray-a6) pl-3"
-                  >
-                    <Heading as="h4" size="2">
-                      <ExternalLink
-                        href={project.url}
-                        highContrast
-                        underline="hover"
-                      >
-                        {project.name}
-                      </ExternalLink>
-                    </Heading>
-                    <Text as="p" size="2" color="gray" mt="1">
-                      {project.description}
-                    </Text>
-                    <Box mt="2">
-                      <Flex
-                        gap="1"
-                        wrap="wrap"
-                        role="list"
-                        aria-label="Technologies used"
-                      >
-                        {project.technologies.map((tech) => (
-                          <li key={tech} className="list-none">
-                            <Badge variant="soft" size="1">
-                              {tech}
-                            </Badge>
-                          </li>
-                        ))}
-                      </Flex>
-                    </Box>
-                  </li>
-                ))}
+              <Flex direction="column" gap="3" mt="3" asChild>
+                <ul aria-label="Client projects" className="list-none">
+                  {job.projects.map((project) => (
+                    <li
+                      key={project.name}
+                      className="border-l-2 border-(--gray-a6) pl-3"
+                    >
+                      <Heading as="h4" size="2">
+                        <ExternalLink
+                          href={project.url}
+                          highContrast
+                          underline="hover"
+                        >
+                          {project.name}
+                        </ExternalLink>
+                      </Heading>
+                      <Text as="p" size="2" color="gray" mt="1">
+                        {project.description}
+                      </Text>
+                      <Box mt="2">
+                        <Flex gap="1" wrap="wrap" asChild>
+                          <ul
+                            aria-label="Technologies used"
+                            className="list-none"
+                          >
+                            {project.technologies.map((tech) => (
+                              <li key={tech}>
+                                <Badge variant="soft" size="1">
+                                  {tech}
+                                </Badge>
+                              </li>
+                            ))}
+                          </ul>
+                        </Flex>
+                      </Box>
+                    </li>
+                  ))}
+                </ul>
               </Flex>
             )}
           </Card>
