@@ -21,12 +21,15 @@ if [ -z "$main" ]; then
 fi
 main_file="$(basename "$main")"
 
-engine="${CV_ENGINE:-pdf}"
+# Engine: default pdfLaTeX, overridden by the magic comment, then by an
+# explicit CV_ENGINE (which always wins).
+engine="pdf"
 if grep -qiE '%[[:space:]]*!TeX program[[:space:]]*=[[:space:]]*xelatex' "$main"; then
   engine="xe"
 elif grep -qiE '%[[:space:]]*!TeX program[[:space:]]*=[[:space:]]*lualatex' "$main"; then
   engine="lua"
 fi
+engine="${CV_ENGINE:-$engine}"
 case "$engine" in
   pdf) flag="-pdf" ;;
   xe) flag="-pdfxe" ;;

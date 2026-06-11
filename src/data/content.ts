@@ -69,7 +69,7 @@ export const services: ServiceOffering[] = [
     color: "indigo",
     items: [
       ".NET backend — ASP.NET Core with MVC, Razor Pages, or Blazor",
-      "Angular or React frontend",
+      "JavaScript frontend",
       "SLA-backed maintenance and support",
     ],
   },
@@ -88,7 +88,7 @@ export const services: ServiceOffering[] = [
     items: [
       "Data processing and normalization",
       "Report definition and implementation",
-      "Automated reporting with Python and Microsoft Power BI",
+      "Automated reporting with Python",
       "Clear data presentation and actionable insights",
     ],
   },
