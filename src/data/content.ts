@@ -3,7 +3,6 @@ export const siteUrl = "https://www.tomaszalesak.eu";
 export interface ContactLink {
   label: string;
   href: string;
-  text: string;
   external: boolean;
 }
 
@@ -39,6 +38,22 @@ export interface ClientProject {
   url: string;
   description: string;
   technologies: string[];
+}
+
+export interface ServiceOffering {
+  name: string;
+  description: string;
+  items: string[];
+}
+
+export interface ServicesContent {
+  intro: string;
+  offerings: ServiceOffering[];
+}
+
+export interface WorkPrinciple {
+  title: string;
+  description: string;
 }
 
 export const about: AboutContent = {
@@ -81,35 +96,92 @@ export const about: AboutContent = {
     "I've tried many languages and technologies over the years — my passion is choosing the right one for the problem at hand.",
 };
 
+export const services: ServicesContent = {
+  intro:
+    "I specialize in enterprise-grade software with three things non-negotiable: scalability, security, and stability.",
+  offerings: [
+    {
+      name: "Web applications",
+      description:
+        "Complete web applications on a proven enterprise stack — designed, built, and supported for the long run.",
+      items: [
+        ".NET backend — ASP.NET Core with MVC, Razor Pages, or Blazor",
+        "Angular or React frontend",
+        "SLA-backed maintenance and support",
+        "Enterprise-grade security, scalability, and stability built in",
+      ],
+    },
+    {
+      name: "Distributed systems",
+      description:
+        "For applications where resiliency, scalability, and throughput are essential — systems that keep running when traffic doubles.",
+      items: [
+        "Microservices orchestrated with Kubernetes and Docker",
+        "Cloud-native deployments on Azure Kubernetes Service (AKS)",
+        "Built for high availability and horizontal scaling",
+      ],
+    },
+    {
+      name: "Data analysis",
+      description:
+        "From raw data to decisions — processing pipelines, automated reporting, and insights your team can act on.",
+      items: [
+        "Data processing and normalization",
+        "Report definition and implementation",
+        "Automated reporting with Python and Microsoft Power BI",
+        "Clear data presentation and actionable insights",
+      ],
+    },
+  ],
+};
+
+export const workPrinciples: WorkPrinciple[] = [
+  {
+    title: "CI/CD automation",
+    description:
+      "Builds, tests, and deployments run automatically across every environment — releases become a non-event.",
+  },
+  {
+    title: "Scalability",
+    description:
+      "Architecture that is ready to grow from day one and adapts as your needs evolve.",
+  },
+  {
+    title: "Security",
+    description:
+      "Threat analysis is part of planning, not an afterthought. Vulnerabilities are assessed and prevented within the CVSS v3 framework.",
+  },
+  {
+    title: "Team management",
+    description:
+      "Agile delivery in 14-day sprints with all the ceremonies — predictable progress and smooth collaboration.",
+  },
+];
+
 export const contactLinks: ContactLink[] = [
   {
     label: "Email",
     href: "mailto:tomas@tomaszalesak.eu",
-    text: "tomas@tomaszalesak.eu",
     external: false,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/zalesaktomas/",
-    text: "LinkedIn",
     external: true,
   },
   {
     label: "GitHub",
     href: "https://github.com/tomaszalesak",
-    text: "github.com/tomaszalesak",
     external: true,
   },
   {
     label: "Facebook",
     href: "https://www.facebook.com/zalesak.tomas",
-    text: "facebook.com/zalesak.tomas",
     external: true,
   },
   {
-    label: "CV",
+    label: "Download CV",
     href: "/cv.pdf",
-    text: "Download CV (PDF)",
     external: false,
   },
 ];
@@ -182,7 +254,7 @@ export const workExperience: WorkExperience[] = [
   {
     title: "Senior Software Engineer",
     description:
-      "Freelance senior engineer delivering full-stack solutions for multiple clients — from greenfield microservice platforms to warehouse-logistics systems — covering architecture, domain-driven design, cloud, and CI/CD.",
+      "Independent senior engineer delivering full-stack solutions for multiple clients — from greenfield microservice platforms to warehouse-logistics systems — covering architecture, domain-driven design, cloud, and CI/CD.",
     projects: clientProjects,
     period: "2021–now",
   },

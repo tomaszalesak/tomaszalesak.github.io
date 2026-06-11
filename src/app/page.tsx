@@ -1,10 +1,11 @@
 import { About } from "@/components/about";
-import { Contact } from "@/components/contact";
 import { Education } from "@/components/education";
 import { Experience } from "@/components/experience";
 import { Hero } from "@/components/hero";
 import { Hobbies } from "@/components/hobbies";
+import { HowIWork } from "@/components/how-i-work";
 import { JsonLd } from "@/components/json-ld";
+import { Services } from "@/components/services";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <JsonLd />
       <Hero />
       <About />
-      <Contact />
+      <Services />
+      <HowIWork />
       <Experience />
       <Education />
       <Hobbies />

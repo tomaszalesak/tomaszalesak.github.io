@@ -9,7 +9,7 @@ export function JsonLd() {
     email: "tomas@tomaszalesak.eu",
     jobTitle: "Senior Software Engineer",
     description:
-      "Freelance senior software engineer in the EU. Full-stack .NET, React, TypeScript, and cloud. Available for client projects.",
+      "Senior software engineer in the EU building enterprise-grade web applications, distributed systems, and data analysis solutions. Available for freelance projects.",
     worksFor: {
       "@type": "Organization",
       name: "Disruptive Lab",
@@ -54,6 +54,13 @@ export function JsonLd() {
       "Domain-Driven Design",
       "CI/CD",
       "Application Security",
+      "ASP.NET Core",
+      "Blazor",
+      "Angular",
+      "Azure Kubernetes Service (AKS)",
+      "Microsoft Power BI",
+      "Distributed Systems",
+      "Data Analysis",
     ],
     image: `${siteUrl}/portrait.webp`,
   };
