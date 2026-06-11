@@ -4,41 +4,60 @@
 %\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
 \usepackage{lmodern}
 \usepackage[utf8]{inputenc}
-\usepackage[czech]{babel}
-%\usepackage[resetfonts]{cmap}
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[scale=0.75]{geometry}
 %\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-\hyphenation{speciali-zací}
 \name{Tomáš}{Zálešák}
-\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\title{Senior Software Engineer}                       % optional, remove / comment the line if not wanted
 \address{Sochorova 3228/46}{}{Brno, Czechia} % optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
 \phone[mobile]{+420~773~658~177}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
-%\phone[fixed]{+2~(345)~678~901}
-%\phone[fax]{+3~(456)~789~012}
 \email{tomas@tomaszalesak.eu}                       % optional, remove / comment the line if not wanted
 \homepage{www.tomaszalesak.eu}                   % optional, remove / comment the line if not wanted
-%\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
-%\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
-%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\social[linkedin]{zalesaktomas}                    % optional, remove / comment the line if not wanted
+\social[github]{tomaszalesak}                      % optional, remove / comment the line if not wanted
 \photo[64pt][0.4pt]{photo.jpg}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+\quote{I build enterprise-grade software end to end --- my passion is choosing the right tool for each problem.}
 \begin{document}
 \makecvtitle
+
+\section{Profile}
+\cvitem{}{Senior full-stack software engineer specializing in enterprise-grade software --- designed for scalability, security, and stability from day one. I build complete products end to end, from backend architecture and databases to polished frontends and the pipelines that ship them. I've worked across many languages and technologies, and my passion is choosing the right one for the problem at hand.}
+
+\section{What I do}
+\cvitem{Web applications}{.NET backends (ASP.NET Core --- MVC, Razor Pages, Blazor) with Angular or React frontends, plus SLA-backed maintenance and support.}
+\cvitem{Distributed systems}{Microservices on Kubernetes, Docker and Azure Kubernetes Service (AKS), built for high availability and horizontal scaling.}
+\cvitem{Data analysis}{Data processing and normalization, automated reporting with Python and Microsoft Power BI, and clear, actionable insights.}
+\cvitem{How I work}{CI/CD automation across every environment, scalability and security by design (threat analysis within the CVSS~v3 framework), and Agile delivery in two-week sprints.}
+
 \section{Experience}
-\cventry{2021--now}{Senior Software Engineer}{Disruptive Lab · Quadient · Notino · RHBcare}{}{}{Full-stack development and consulting, architecture and domain-driven design, primarily focused on .NET, React.js, Bobril.js, TypeScript, JavaScript, SQL, cloud, CI/CD.}
-\cventry{2019--2021}{Software Engineer}{Y Soft}{Brno}{}{Dynamic analysis of application security and its automation with OpenVAS, development using .NET, React, Python 3, Bash, Java, CI/CD tools, JavaScript.}
-\cventry{2017--2018}{Software Engineer Intern}{AutoCont}{Brno}{}{Localization automation, translating and database migration, Python 3, SQL, .NET, JavaScript.}
+\cventry{2021--now}{Senior Software Engineer}{Independent / Freelance}{}{}{Full-stack solutions for multiple clients --- architecture, domain-driven design, cloud and CI/CD --- primarily across .NET and React/TypeScript stacks.}
+\cvlistitem{\textbf{Quadient} --- cloud e-invoicing platform: many microservices and the team's custom microservice infrastructure, React.js frontends and .NET backends, greenfield projects, scaling, unit/integration/e2e testing, observability with Grafana and Loki, code reviews, and AI-assisted development with Claude Code.}
+\cvlistitem{\textbf{Notino} --- new solution for managing consumables across all European warehouses: a .NET and Microsoft SQL Server backend (domain-driven design, events, vertical slices) with a React.js frontend; mentoring and repository collaboration and code-style standards.}
+\cvlistitem{\textbf{Disruptive Lab} --- full-stack development and consulting: software architecture and domain-driven design in .NET, React.js, Bobril.js, TypeScript and SQL, with cloud and CI/CD.}
+\cvlistitem{\textbf{RHBcare} --- Next.js web application: web design, SEO, data and customer management, process automation, plus Linux and Windows server administration, databases, automated backups and networking.}
+\cvlistitem{\textbf{Y Soft} --- consulting on the automated security-scanning solution I originally designed and built (OpenVAS orchestrated with Atlassian Bamboo).}
+\cventry{2019--2021}{Software Engineer}{Y Soft}{Brno}{}{Designed and fully automated dynamic application-security analysis: OpenVAS/Greenbone vulnerability scanning orchestrated by Atlassian Bamboo across a three-VM VirtualBox infrastructure, automatically detecting new vulnerabilities and suppressing false positives; continuously validated against Ubuntu~18.04 running Rocket.Chat. Worked with Linux and Windows administration, React, .NET Core, Java, Python, Bash and PowerShell.}
+\cventry{2017--2018}{Software Engineer Intern}{AutoCont}{Brno}{}{Developed custom modules for Microsoft Dynamics 365 Business Central and automated localization into Czech and English, using Python 3, .NET, TypeScript, JavaScript, Microsoft SQL Server, PowerShell and Bash.}
+
 \section{Education}
-\cventry{2020--2022}{student of master degree}{Faculty of Informatics, Masaryk University}{Brno}{\textit{Information technology}}{}
-\cventry{2016--2020}{student of bachelor degree}{Faculty of Information Technology, Brno University of Technology}{Brno}{\textit{Information technology}}{}
+\cventry{2020--2022}{Mgr. (Master's degree)}{Faculty of Informatics, Masaryk University}{Brno}{\textit{Software Systems Development and Management}}{}
+\cventry{2016--2020}{Bc. (Bachelor's degree)}{Faculty of Information Technology, Brno University of Technology}{Brno}{\textit{Information Technology}}{}
+
 \section{Skills}
-\cvitem{languages}{C\#, JavaScript, TypeScript, Python, Java, C, Bash, SQL, CSS}
-\cvitem{frameworks}{React.js, .NET, Solid.js, Vue.js, Node.js, Angular, Nx}
-\cvitem{cloud \& DevOps}{Azure, AWS, Docker, CI/CD tools}
-\cvitem{databases}{PostgreSQL, SQL Server}
-\cvitem{operating systems}{Linux/Unix, macOS, Windows}
-\cvitem{tools}{Git, ORMs, VS Code, JetBrains IDEs, OpenVAS, Claude Code}
-\cvitem{other}{Domain-driven design, artificial intelligence}
-\clearpage
+\cvitem{Backend}{.NET, C\#, Entity Framework Core, SQL, Python 3}
+\cvitem{Frontend}{React, Vue, Solid.js, Bobril.js, TypeScript, Tailwind CSS}
+\cvitem{Architecture}{Microservices, message queues, domain-driven design, vertical slices}
+\cvitem{Cloud \& DevOps}{Azure, AWS, Docker, Kubernetes, GitHub Actions, Atlassian Bamboo, Azure DevOps; deployment, scaling, monitoring, logging}
+\cvitem{Databases}{PostgreSQL, Microsoft SQL Server, NoSQL}
+\cvitem{Security}{SecDevOps, automated vulnerability scanning with OpenVAS, CVSS~v3}
+\cvitem{AI \& tooling}{Claude Code, Codex, OpenCode; monorepos with Nx and Turborepo}
+
+\section{Languages}
+\cvitem{Czech}{Native}
+\cvitem{English}{Professional working proficiency}
+
+\section{Interests}
+\cvitem{}{Sports, especially basketball --- I play for BK TJ Spartak Uherský Brod.}
+
 \end{document}
