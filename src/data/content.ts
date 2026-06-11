@@ -22,17 +22,6 @@ export interface EducationEntry {
   period: string;
 }
 
-export interface AboutHighlight {
-  area: string;
-  items: string;
-}
-
-export interface AboutContent {
-  intro: string;
-  highlights: AboutHighlight[];
-  closing: string;
-}
-
 export interface ClientProject {
   name: string;
   url: string;
@@ -40,121 +29,155 @@ export interface ClientProject {
   technologies: string[];
 }
 
+/** Radix accent colors used as section accents (all are dark/light aware). */
+export type AccentColor =
+  | "indigo"
+  | "teal"
+  | "amber"
+  | "grass"
+  | "blue"
+  | "ruby"
+  | "violet";
+
+export type ServiceIcon = "web" | "distributed" | "data";
+export type PrincipleIcon = "cicd" | "scale" | "shield" | "team";
+
 export interface ServiceOffering {
   name: string;
   description: string;
   items: string[];
-}
-
-export interface ServicesContent {
-  intro: string;
-  offerings: ServiceOffering[];
+  icon: ServiceIcon;
+  color: AccentColor;
 }
 
 export interface WorkPrinciple {
   title: string;
   description: string;
+  icon: PrincipleIcon;
+  color: AccentColor;
 }
 
-export const about: AboutContent = {
-  intro:
-    "I'm a senior full-stack software engineer who designs and builds complete products — from backend architecture and databases to polished frontends and the CI/CD pipelines that ship them.",
-  highlights: [
-    {
-      area: "Backend",
-      items: ".NET, C#, Entity Framework Core, SQL, Python 3",
-    },
-    {
-      area: "Frontend",
-      items: "React, Vue, Solid.js, Bobril.js, TypeScript, Tailwind CSS",
-    },
-    {
-      area: "Architecture",
-      items:
-        "Microservice architecture, message queues, domain-driven design, vertical slices",
-    },
-    {
-      area: "Cloud & DevOps",
-      items:
-        "Azure, AWS, Docker, GitHub Actions, Atlassian Bamboo, Azure DevOps — deployment, scaling, monitoring, logging",
-    },
-    {
-      area: "Databases",
-      items: "PostgreSQL, Microsoft SQL Server, NoSQL databases",
-    },
-    {
-      area: "Security",
-      items: "SecDevOps, automated vulnerability scanning with OpenVAS",
-    },
-    {
-      area: "AI & tooling",
-      items:
-        "AI models and AI coding tools (Claude Code, Codex, OpenCode); monorepos with Nx and Turborepo",
-    },
-  ],
-  closing:
-    "I've tried many languages and technologies over the years — my passion is choosing the right one for the problem at hand.",
-};
+export interface SkillGroup {
+  area: string;
+  items: string;
+  color: AccentColor;
+}
 
-export const services: ServicesContent = {
-  intro:
-    "I specialize in enterprise-grade software with three things non-negotiable: scalability, security, and stability.",
-  offerings: [
-    {
-      name: "Web applications",
-      description:
-        "Complete web applications on a proven enterprise stack — designed, built, and supported for the long run.",
-      items: [
-        ".NET backend — ASP.NET Core with MVC, Razor Pages, or Blazor",
-        "Angular or React frontend",
-        "SLA-backed maintenance and support",
-        "Enterprise-grade security, scalability, and stability built in",
-      ],
-    },
-    {
-      name: "Distributed systems",
-      description:
-        "For applications where resiliency, scalability, and throughput are essential — systems that keep running when traffic doubles.",
-      items: [
-        "Microservices orchestrated with Kubernetes and Docker",
-        "Cloud-native deployments on Azure Kubernetes Service (AKS)",
-        "Built for high availability and horizontal scaling",
-      ],
-    },
-    {
-      name: "Data analysis",
-      description:
-        "From raw data to decisions — processing pipelines, automated reporting, and insights your team can act on.",
-      items: [
-        "Data processing and normalization",
-        "Report definition and implementation",
-        "Automated reporting with Python and Microsoft Power BI",
-        "Clear data presentation and actionable insights",
-      ],
-    },
-  ],
-};
+export const expertiseIntro =
+  "I'm a senior full-stack engineer specializing in enterprise-grade software — designed for scalability, security, and stability from day one. I build complete products end to end, from backend architecture and databases to polished frontends and the pipelines that ship them.";
+
+export const expertiseClosing =
+  "I've tried many languages and technologies over the years — my passion is choosing the right one for the problem at hand.";
+
+export const services: ServiceOffering[] = [
+  {
+    name: "Web applications",
+    description:
+      "Complete web applications on a proven enterprise stack — designed, built, and supported for the long run.",
+    icon: "web",
+    color: "indigo",
+    items: [
+      ".NET backend — ASP.NET Core with MVC, Razor Pages, or Blazor",
+      "Angular or React frontend",
+      "SLA-backed maintenance and support",
+    ],
+  },
+  {
+    name: "Distributed systems",
+    description:
+      "For applications where resiliency, scalability, and throughput are essential — systems that keep running when traffic doubles.",
+    icon: "distributed",
+    color: "teal",
+    items: [
+      "Microservices orchestrated with Kubernetes and Docker",
+      "Cloud-native deployments on Azure Kubernetes Service (AKS)",
+      "Built for high availability and horizontal scaling",
+    ],
+  },
+  {
+    name: "Data analysis",
+    description:
+      "From raw data to decisions — processing pipelines, automated reporting, and insights your team can act on.",
+    icon: "data",
+    color: "amber",
+    items: [
+      "Data processing and normalization",
+      "Report definition and implementation",
+      "Automated reporting with Python and Microsoft Power BI",
+      "Clear data presentation and actionable insights",
+    ],
+  },
+];
 
 export const workPrinciples: WorkPrinciple[] = [
   {
     title: "CI/CD automation",
     description:
       "Builds, tests, and deployments run automatically across every environment — releases become a non-event.",
+    icon: "cicd",
+    color: "grass",
   },
   {
     title: "Scalability",
     description:
       "Architecture that is ready to grow from day one and adapts as your needs evolve.",
+    icon: "scale",
+    color: "blue",
   },
   {
     title: "Security",
     description:
       "Threat analysis is part of planning, not an afterthought. Vulnerabilities are assessed and prevented within the CVSS v3 framework.",
+    icon: "shield",
+    color: "ruby",
   },
   {
     title: "Team management",
     description:
       "Agile delivery in 14-day sprints with all the ceremonies — predictable progress and smooth collaboration.",
+    icon: "team",
+    color: "violet",
+  },
+];
+
+export const skillGroups: SkillGroup[] = [
+  {
+    area: "Backend",
+    items: ".NET, C#, Entity Framework Core, SQL, Python 3",
+    color: "indigo",
+  },
+  {
+    area: "Frontend",
+    items: "React, Vue, Solid.js, Bobril.js, TypeScript, Tailwind CSS",
+    color: "teal",
+  },
+  {
+    area: "Architecture",
+    items:
+      "Microservice architecture, message queues, domain-driven design, vertical slices",
+    color: "violet",
+  },
+  {
+    area: "Cloud & DevOps",
+    items:
+      "Azure, AWS, Docker, GitHub Actions, Atlassian Bamboo, Azure DevOps — deployment, scaling, monitoring, logging",
+    color: "blue",
+  },
+  {
+    area: "Databases",
+    items: "PostgreSQL, Microsoft SQL Server, NoSQL databases",
+    color: "amber",
+  },
+  {
+    area: "Security",
+    items: "SecDevOps, automated vulnerability scanning with OpenVAS",
+    color: "ruby",
+  },
+  {
+    area: "AI & tooling",
+    items:
+      "AI models and AI coding tools (Claude Code, Codex, OpenCode); monorepos with Nx and Turborepo",
+    color: "grass",
   },
 ];
 
