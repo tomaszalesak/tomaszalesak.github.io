@@ -10,13 +10,9 @@ export interface ContactLink {
 export interface WorkExperience {
   title: string;
   description: string;
-  companies: Array<{ name: string; url: string }>;
+  companies?: Array<{ name: string; url: string }>;
+  projects?: ClientProject[];
   period: string;
-}
-
-export interface Technology {
-  name: string;
-  url: string;
 }
 
 export interface EducationEntry {
@@ -118,35 +114,6 @@ export const contactLinks: ContactLink[] = [
   },
 ];
 
-export const workExperience: WorkExperience[] = [
-  {
-    title: "Senior Software Engineer",
-    description:
-      "Freelance senior engineer delivering full-stack solutions for multiple clients — from greenfield microservice platforms to warehouse-logistics systems — covering architecture, domain-driven design, cloud, and CI/CD. Detailed per client in the Client Projects section below.",
-    companies: [
-      { name: "Disruptive Lab", url: "https://disruptivelab.dev/" },
-      { name: "Quadient", url: "https://www.quadient.com/" },
-      { name: "Notino", url: "https://www.notino.com/" },
-      { name: "RHBcare", url: "https://www.fyzioterapieuh.cz/" },
-    ],
-    period: "2021–now",
-  },
-  {
-    title: "Software Engineer",
-    description:
-      "Designed and fully automated dynamic application-security analysis: OpenVAS/Greenbone vulnerability scanning orchestrated by Atlassian Bamboo across a three-VM VirtualBox infrastructure, automatically detecting new vulnerabilities and suppressing false positives. Continuously validated against Ubuntu 18.04 running Rocket.Chat; a similar solution was deployed internally at Y Soft. Worked with Linux and Windows administration, React, .NET Core, Java, Python, Bash, and PowerShell.",
-    companies: [{ name: "Y Soft", url: "https://www.ysoft.com/" }],
-    period: "2019–2021",
-  },
-  {
-    title: "Software Engineer Intern",
-    description:
-      "Worked in a team developing Microsoft Dynamics 365 Business Central, building new custom modules for client companies and automating localization into Czech and English. Used Python 3, .NET, TypeScript, JavaScript, Microsoft SQL Server, PowerShell, and Bash.",
-    companies: [{ name: "AutoCont", url: "https://www.autocont.cz/" }],
-    period: "2017–2018",
-  },
-];
-
 export const clientProjects: ClientProject[] = [
   {
     name: "Quadient",
@@ -211,54 +178,27 @@ export const clientProjects: ClientProject[] = [
   },
 ];
 
-export const technologies: Technology[] = [
-  { name: ".NET", url: "https://dotnet.microsoft.com/" },
-  { name: "React.js", url: "https://react.dev/" },
-  { name: "TypeScript", url: "https://www.typescriptlang.org/" },
+export const workExperience: WorkExperience[] = [
   {
-    name: "JavaScript",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    title: "Senior Software Engineer",
+    description:
+      "Freelance senior engineer delivering full-stack solutions for multiple clients — from greenfield microservice platforms to warehouse-logistics systems — covering architecture, domain-driven design, cloud, and CI/CD.",
+    projects: clientProjects,
+    period: "2021–now",
   },
-  { name: "Nx", url: "https://nx.dev/" },
-  { name: "Solid.js", url: "https://www.solidjs.com/" },
-  { name: "Vue.js", url: "https://vuejs.org/" },
-  { name: "Node.js", url: "https://nodejs.org/" },
-  { name: "Angular", url: "https://angular.dev/" },
-  { name: "Python", url: "https://www.python.org/" },
-  { name: "Java", url: "https://www.java.com/" },
-  { name: "C", url: "https://en.cppreference.com/w/c" },
-  { name: "OpenVAS", url: "https://www.openvas.org/" },
   {
-    name: "Unix",
-    url: "https://www.opengroup.org/membership/forums/platform/unix",
+    title: "Software Engineer",
+    description:
+      "Designed and fully automated dynamic application-security analysis: OpenVAS/Greenbone vulnerability scanning orchestrated by Atlassian Bamboo across a three-VM VirtualBox infrastructure, automatically detecting new vulnerabilities and suppressing false positives. Continuously validated against Ubuntu 18.04 running Rocket.Chat; a similar solution was deployed internally at Y Soft. Worked with Linux and Windows administration, React, .NET Core, Java, Python, Bash, and PowerShell.",
+    companies: [{ name: "Y Soft", url: "https://www.ysoft.com/" }],
+    period: "2019–2021",
   },
-  { name: "Windows", url: "https://www.microsoft.com/windows/" },
-  { name: "Docker", url: "https://www.docker.com/" },
-  { name: "SQL", url: "https://www.iso.org/standard/63555.html" },
-  { name: "Azure", url: "https://azure.microsoft.com/" },
-  { name: "AWS", url: "https://aws.amazon.com/" },
-  { name: "Claude Code", url: "https://claude.ai/code" },
   {
-    name: "Artificial Intelligence",
-    url: "https://en.wikipedia.org/wiki/Artificial_intelligence",
-  },
-  { name: "PostgreSQL", url: "https://www.postgresql.org/" },
-  { name: "macOS", url: "https://www.apple.com/macos/" },
-  { name: "CSS", url: "https://www.w3.org/Style/CSS/" },
-  { name: "C#", url: "https://learn.microsoft.com/dotnet/csharp/" },
-  {
-    name: "Entity Framework Core",
-    url: "https://learn.microsoft.com/ef/core/",
-  },
-  { name: "Next.js", url: "https://nextjs.org/" },
-  { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
-  { name: "Kubernetes", url: "https://kubernetes.io/" },
-  { name: "Grafana", url: "https://grafana.com/" },
-  { name: "GitHub Actions", url: "https://github.com/features/actions" },
-  { name: "Azure DevOps", url: "https://azure.microsoft.com/products/devops" },
-  {
-    name: "Microsoft SQL Server",
-    url: "https://www.microsoft.com/sql-server",
+    title: "Software Engineer Intern",
+    description:
+      "Worked in a team developing Microsoft Dynamics 365 Business Central, building new custom modules for client companies and automating localization into Czech and English. Used Python 3, .NET, TypeScript, JavaScript, Microsoft SQL Server, PowerShell, and Bash.",
+    companies: [{ name: "AutoCont", url: "https://www.autocont.cz/" }],
+    period: "2017–2018",
   },
 ];
 
