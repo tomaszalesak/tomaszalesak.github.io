@@ -17,7 +17,7 @@ export function Experience() {
                 {job.period}
               </Badge>
             </Flex>
-            <Text as="p" size="2" color="gray" mt="2">
+            <Text as="p" size={{ initial: "3", sm: "2" }} color="gray" mt="2">
               {job.description}
             </Text>
             {job.companies && (
@@ -52,7 +52,7 @@ export function Experience() {
                       key={project.name}
                       className="border-l-2 border-(--gray-a6) pl-3"
                     >
-                      <Heading as="h4" size="2">
+                      <Heading as="h4" size={{ initial: "3", sm: "2" }}>
                         <ExternalLink
                           href={project.url}
                           highContrast
@@ -61,7 +61,12 @@ export function Experience() {
                           {project.name}
                         </ExternalLink>
                       </Heading>
-                      <Text as="p" size="2" color="gray" mt="1">
+                      <Text
+                        as="p"
+                        size={{ initial: "3", sm: "2" }}
+                        color="gray"
+                        mt="1"
+                      >
                         {project.description}
                       </Text>
                       <Box mt="2">
@@ -72,7 +77,10 @@ export function Experience() {
                           >
                             {project.technologies.map((tech) => (
                               <li key={tech}>
-                                <Badge variant="soft" size="1">
+                                <Badge
+                                  variant="soft"
+                                  size={{ initial: "2", sm: "1" }}
+                                >
                                   {tech}
                                 </Badge>
                               </li>

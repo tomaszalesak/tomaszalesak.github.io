@@ -5,7 +5,7 @@ import { Section } from "./section";
 export function Hobbies() {
   return (
     <Section title="Hobbies">
-      <Text as="p" size="3">
+      <Text as="p" size={{ initial: "4", sm: "3" }}>
         Apart from IT, I love sports, especially basketball which I play for{" "}
         <ExternalLink href="http://basket.ub.cz">
           BK TJ Spartak Uherský Brod
