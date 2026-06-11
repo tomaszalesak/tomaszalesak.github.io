@@ -14,17 +14,31 @@ Personal portfolio website for [Tomáš Zálešák](https://www.tomaszalesak.eu)
 
 ```bash
 bun install
-bun run dev
+bun run dev        # dev server
+bun run lint       # Biome check (use lint:fix to auto-fix)
+bun run build      # static export to out/
 ```
 
-## Build
+## CV
+
+The CV is a LaTeX ([moderncv](https://ctan.org/pkg/moderncv)) document in
+[`cv/`](cv/), compiled in a Dockerized TeX Live image — no local TeX install
+needed:
 
 ```bash
-bun run build
+bun run cv:build   # → public/cv.pdf (requires Docker)
 ```
 
-Static output is generated in the `out/` directory.
+See [`cv/README.md`](cv/README.md) for details.
 
 ## Deployment
 
-Deployed to [GitHub Pages](https://pages.github.com/) via GitHub Actions on push to `main`.
+Deployed to [GitHub Pages](https://pages.github.com/) via GitHub Actions on push
+to `main`. The deploy regenerates `public/cv.pdf` from the LaTeX source so the
+downloadable CV is always current.
+
+## Dependencies
+
+Kept up to date by [Dependabot](.github/dependabot.yml), which opens weekly
+grouped PRs for the Bun (`package.json` + `bun.lock`) and GitHub Actions
+dependencies.

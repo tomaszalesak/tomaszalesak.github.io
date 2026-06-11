@@ -1,0 +1,36 @@
+version: 2
+updates:
+  # JavaScript / TypeScript dependencies — updates package.json and bun.lock
+  # together (Dependabot's dedicated Bun ecosystem), so `bun install
+  # --frozen-lockfile` in CI stays in sync.
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    groups:
+      # One PR per week for all non-major bumps; majors get their own PR so
+      # they can be reviewed and tested individually.
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # GitHub Actions pinned in the workflows (checkout, setup-bun, pages, …)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
