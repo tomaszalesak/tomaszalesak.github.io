@@ -6,7 +6,7 @@ interface SectionProps {
   children: React.ReactNode;
 }
 
-export function Section({ title, children }: SectionProps) {
+export function Section({ title, children }: Readonly<SectionProps>) {
   const headingId = useId();
   return (
     <Box asChild mt="7">

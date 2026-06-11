@@ -8,13 +8,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Tomáš Zálešák – Senior Software Engineer",
   description:
-    "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU specializing in .NET, React.js, TypeScript, and cloud technologies.",
+    "Tomáš Zálešák — senior software engineer. Enterprise-grade web applications, distributed systems, and data analysis. Available for freelance projects.",
   keywords: [
     "senior software engineer",
+    "freelance software engineer",
+    "software consultant",
     "full-stack developer",
     ".NET",
     "React",
     "TypeScript",
+    "Next.js",
+    "enterprise software",
+    "distributed systems",
+    "data analysis",
     "portfolio",
     "Tomáš Zálešák",
   ],
@@ -27,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Tomáš Zálešák",
     title: "Tomáš Zálešák – Senior Software Engineer",
     description:
-      "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU specializing in .NET, React.js, TypeScript, and cloud technologies.",
+      "Tomáš Zálešák — senior software engineer. Enterprise-grade web applications, distributed systems, and data analysis. Available for freelance projects.",
     images: [
       {
         url: `${siteUrl}/portrait.webp`,
@@ -42,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Tomáš Zálešák – Senior Software Engineer",
     description:
-      "Portfolio of Tomáš Zálešák, a senior software engineer based in the EU.",
+      "Senior software engineer based in the EU — available for freelance projects.",
     images: [`${siteUrl}/portrait.webp`],
   },
   icons: {
@@ -65,9 +71,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

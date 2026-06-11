@@ -1,14 +1,16 @@
-import type { Person, WithContext } from "schema-dts";
+import type { Person, ProfilePage, WithContext } from "schema-dts";
 import { siteUrl } from "@/data/content";
 
 export function JsonLd() {
-  const jsonLd: WithContext<Person> = {
-    "@context": "https://schema.org",
+  const person: Person = {
     "@type": "Person",
     name: "Tomáš Zálešák",
     url: siteUrl,
     email: "tomas@tomaszalesak.eu",
+    telephone: "+420773658177",
     jobTitle: "Senior Software Engineer",
+    description:
+      "Senior software engineer in the EU building enterprise-grade web applications, distributed systems, and data analysis solutions. Available for freelance projects.",
     worksFor: {
       "@type": "Organization",
       name: "Disruptive Lab",
@@ -31,17 +33,45 @@ export function JsonLd() {
     ],
     knowsAbout: [
       ".NET",
+      "C#",
+      "Entity Framework Core",
       "React.js",
+      "Vue.js",
+      "Solid.js",
+      "Next.js",
       "TypeScript",
       "JavaScript",
       "Node.js",
+      "Tailwind CSS",
       "Python",
       "Docker",
+      "Kubernetes",
       "SQL",
+      "PostgreSQL",
+      "Microsoft SQL Server",
       "Azure",
       "AWS",
+      "Microservices",
+      "Domain-Driven Design",
+      "CI/CD",
+      "Application Security",
+      "ASP.NET Core",
+      "Blazor",
+      "Angular",
+      "Azure Kubernetes Service (AKS)",
+      "Microsoft Power BI",
+      "Distributed Systems",
+      "Data Analysis",
     ],
+    knowsLanguage: ["Czech", "English"],
     image: `${siteUrl}/portrait.webp`,
+  };
+
+  const jsonLd: WithContext<ProfilePage> = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    inLanguage: "en",
+    mainEntity: person,
   };
 
   return (
@@ -49,7 +79,8 @@ export function JsonLd() {
       type="application/ld+json"
       // biome-ignore lint/security/noDangerouslySetInnerHtml: standard pattern for JSON-LD
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        // Escape "<" so the payload can't break out of the <script> tag.
+        __html: JSON.stringify(jsonLd).replaceAll("<", String.raw`\u003c`),
       }}
     />
   );
