@@ -25,7 +25,7 @@ const techRows: { label: string; items: string; color: AccentColor }[] = [
   })),
 ];
 
-function Eyebrow({ children, mt }: { children: string; mt?: "6" }) {
+function Eyebrow({ children, mt }: Readonly<{ children: string; mt?: "6" }>) {
   return (
     <Heading as="h3" size="2" mb="3" mt={mt}>
       {children}

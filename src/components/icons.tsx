@@ -44,7 +44,7 @@ const principleIcons: Record<PrincipleIcon, React.ReactNode> = {
 export function PrincipleGlyph({
   icon,
   size = 20,
-}: IconProps & { icon: PrincipleIcon }) {
+}: Readonly<IconProps & { icon: PrincipleIcon }>) {
   return (
     <svg width={size} height={size} aria-hidden="true" {...base}>
       {principleIcons[icon]}

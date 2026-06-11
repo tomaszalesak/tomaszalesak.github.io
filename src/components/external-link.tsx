@@ -1,7 +1,9 @@
 import { Link } from "@radix-ui/themes";
 import type { ComponentProps } from "react";
 
-type ExternalLinkProps = Omit<ComponentProps<typeof Link>, "target" | "rel">;
+type ExternalLinkProps = Readonly<
+  Omit<ComponentProps<typeof Link>, "target" | "rel">
+>;
 
 export function ExternalLink({
   children,

@@ -63,12 +63,14 @@ export function JsonLd() {
       "Distributed Systems",
       "Data Analysis",
     ],
+    knowsLanguage: ["Czech", "English"],
     image: `${siteUrl}/portrait.webp`,
   };
 
   const jsonLd: WithContext<ProfilePage> = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
+    inLanguage: "en",
     mainEntity: person,
   };
 
@@ -77,7 +79,8 @@ export function JsonLd() {
       type="application/ld+json"
       // biome-ignore lint/security/noDangerouslySetInnerHtml: standard pattern for JSON-LD
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        // Escape "<" so the payload can't break out of the <script> tag.
+        __html: JSON.stringify(jsonLd).replaceAll("<", String.raw`\u003c`),
       }}
     />
   );
