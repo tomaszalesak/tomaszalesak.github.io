@@ -26,7 +26,7 @@ export function Hero() {
               aria-hidden="true"
               className="h-1.5 w-1.5 rounded-full bg-(--green-9)"
             />
-            {"Available for freelance projects"}
+            {"Open to new projects — feel free to reach out"}
           </Badge>
         </div>
       </Flex>
