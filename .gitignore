@@ -34,3 +34,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# latex build artifacts (cv/) — the committed output is public/cv.pdf
+cv/*.aux
+cv/*.bbl
+cv/*.blg
+cv/*.fdb_latexmk
+cv/*.fls
+cv/*.log
+cv/*.out
+cv/*.pdf
+cv/*.synctex.gz
+cv/*.toc

@@ -21,6 +21,36 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Detect CV source
+        id: cv
+        run: |
+          main="$(grep -l '\\documentclass' cv/*.tex 2>/dev/null | head -1 || true)"
+          if [ -n "$main" ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "file=$(basename "$main")" >> "$GITHUB_OUTPUT"
+            engine=pdf
+            if grep -qiE '%[[:space:]]*!TeX program[[:space:]]*=[[:space:]]*xelatex' "$main"; then engine=xe; fi
+            if grep -qiE '%[[:space:]]*!TeX program[[:space:]]*=[[:space:]]*lualatex' "$main"; then engine=lua; fi
+            echo "engine=$engine" >> "$GITHUB_OUTPUT"
+            echo "Found CV source: $main (engine: $engine)"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "No CV LaTeX source in cv/ — using committed public/cv.pdf."
+          fi
+
+      - name: Build CV (LaTeX → PDF)
+        if: steps.cv.outputs.exists == 'true'
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: cv
+          root_file: ${{ steps.cv.outputs.file }}
+          latexmk_use_xelatex: ${{ steps.cv.outputs.engine == 'xe' }}
+          latexmk_use_lualatex: ${{ steps.cv.outputs.engine == 'lua' }}
+
+      - name: Publish CV to public/
+        if: steps.cv.outputs.exists == 'true'
+        run: cp "cv/$(basename "${{ steps.cv.outputs.file }}" .tex).pdf" public/cv.pdf
+
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
 

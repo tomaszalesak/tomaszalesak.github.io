@@ -10,6 +10,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Lint:** `bun run lint` (Biome check)
 - **Lint + fix:** `bun run lint:fix` (Biome auto-fix)
 - **Install dependencies:** `bun install`
+- **Build CV:** `bun run cv:build` — compiles `cv/*.tex` to `public/cv.pdf` via a Dockerized TeX Live image (requires Docker; no local TeX install). See `cv/README.md`.
 
 ## Architecture
 
@@ -54,5 +55,6 @@ public/
 
 ## CI/CD
 
-- **CI** (`.github/workflows/ci.yml`): Runs on PRs to `main` and pushes to non-main branches. Steps: lint → type check (`tsc --noEmit`) → build.
-- **CD** (`.github/workflows/deploy.yml`): Runs on push to `main`. Steps: install (`--frozen-lockfile`) → build → deploy `out/` to GitHub Pages. Custom domain: `www.tomaszalesak.eu` (CNAME in `public/`).
+- **CI** (`.github/workflows/ci.yml`): Runs on PRs to `main` and pushes to non-main branches. Steps: (conditional CV compile) → lint → type check (`tsc --noEmit`) → build.
+- **CD** (`.github/workflows/deploy.yml`): Runs on push to `main`. Steps: (conditional CV compile → `public/cv.pdf`) → install (`--frozen-lockfile`) → build → deploy `out/` to GitHub Pages. Custom domain: `www.tomaszalesak.eu` (CNAME in `public/`).
+- **CV build in CI/CD:** both workflows have a "Detect CV source" step that looks for a `cv/*.tex` with `\documentclass`. If found, `xu-cheng/latex-action` compiles it (engine auto-detected from the `% !TeX program` magic comment, default pdfLaTeX) and deploy publishes the result to `public/cv.pdf`. If absent, the steps skip and the committed `public/cv.pdf` is used — so the pipeline is safe even without the source.
